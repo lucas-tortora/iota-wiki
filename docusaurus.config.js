@@ -451,6 +451,7 @@ module.exports = {
     ],
     'docusaurus-plugin-matomo',
     'docusaurus-plugin-hotjar',
+    '@docusaurus/plugin-ideal-image',
     [
       '@docusaurus/plugin-content-docs',
       {
