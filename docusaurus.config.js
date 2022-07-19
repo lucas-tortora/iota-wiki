@@ -92,7 +92,7 @@ module.exports = {
         },
         {
           label: 'Libraries',
-          to: 'libraries/introduction',
+          to: '/#libraries',
           activeBaseRegex: '^/libraries/.*',
         },
         {
