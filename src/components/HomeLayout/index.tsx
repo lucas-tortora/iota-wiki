@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Heading from '@theme/Heading';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -31,10 +32,16 @@ interface HomepageSectionProps {
 }
 
 const HomepageSection: FC<HomepageSectionProps> = (props) => {
+  const id = props.header?.match(
+      /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g
+    )
+    .join('-')
+    .toLowerCase();
+  
   return (
     <div className={clsx('homepage__section', props.className)}>
       <div className='homepage__container'>
-        {props.header && <h2 className='homepage__header'>{props.header}</h2>}
+        {props.header && <Heading as='h2' id={id} className='homepage__header'>{props.header}</Heading>}
         {props.description && (
           <p className='homepage__description'>{props.description}</p>
         )}
