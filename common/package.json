@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@iota-wiki/plugin-tutorial": "^1.0.6",
+    "require-glob": "^4.1.0"
+  },
+  "workspaces": [
+    "external/*/*/documentation",
+    "external/*/documentation",
+    "external/iota-2.0-research-specifications/docusaurus",
+    "tutorials"
+  ]
+}

@@ -7,7 +7,7 @@ module.exports = {
             '@docusaurus/plugin-content-pages',
             {
                 id: 'single-page-tutorials',
-                path: __dirname,
+                path: path.resolve(__dirname, './single-page-tutorials'),
                 include: ['**.{md, mdx}'],
             },
         ],

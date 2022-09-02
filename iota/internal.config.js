@@ -1,19 +1,12 @@
 // @ts-check
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const content = require('./iota/docusaurus.config');
 
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA and Shimmer',
   url: 'https://wiki.iota.org',
   baseUrl: '/',
-  onBrokenLinks: 'log',
-  onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
-  trailingSlash: false,
-  organizationName: 'iota-community', // Usually your GitHub org/user name.
-  projectName: 'iota-wiki', // Usually your repo name.
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
     {
@@ -25,7 +18,6 @@ module.exports = {
     },
   ],
   themeConfig: {
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     announcementBar: {
       id: 'govern',
       content:
@@ -392,38 +384,17 @@ module.exports = {
       defaultMode: 'dark',
     },
   },
-  presets: [
-    [
-      '@docusaurus/preset-classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      {
-        docs: false,
-        blog: {
-          showReadingTime: false,
-          blogSidebarCount: 0,
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-        sitemap: {
-          changefreq: 'daily',
-          priority: 0.5,
-        },
-      },
-    ],
-  ],
   plugins: [
-    'plugin-image-zoom',
     'docusaurus-plugin-matomo',
     'docusaurus-plugin-hotjar',
-    '@docusaurus/plugin-ideal-image',
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'learn',
-        path: 'internal/learn',
-        routeBasePath: 'learn',
-        sidebarPath: require.resolve('./internal/learn/sidebars.ts'),
+        id: 'iota',
+        path: '..',
+        routeBasePath: '/',
+        sidebarPath: './sidebars.ts',
+        include: ['./common/docs/**/*.{md,mdx}', './iota/docs/**/*.{md,mdx}'],
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -434,76 +405,6 @@ module.exports = {
         showLastUpdateTime: true,
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'wallets',
-        path: 'content/wallets',
-        routeBasePath: 'wallets',
-        sidebarPath: require.resolve('./content/wallets/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'networks',
-        path: 'content/networks',
-        routeBasePath: 'networks',
-        sidebarPath: require.resolve('./content/networks/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'nodes',
-        //docItemComponent: "@theme/ApiItem",
-        path: 'content/nodes',
-        routeBasePath: 'nodes',
-        sidebarPath: require.resolve('./content/nodes/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'research',
-        path: 'content/research',
-        routeBasePath: 'research',
-        sidebarPath: require.resolve('./content/research/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
-    ...content.plugins,
   ],
-  staticDirectories: ['./static', ...content.staticDirectories],
+  staticDirectories: ['./static'],
 };
