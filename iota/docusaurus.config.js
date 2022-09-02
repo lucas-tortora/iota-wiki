@@ -1,8 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 var requireGlob = require('require-glob');
+var path = require('path');
 
 const { CONTENT = '' } = process.env;
-const configs = CONTENT.split(',').map(item => `${item}/docusaurus.config.js`);
+const configs = CONTENT.split(',').map(item => path.join('external', item, 'docusaurus.config.js'));
 
 function reducer(_options, result, fileObject) {
     if (fileObject && fileObject.exports) {

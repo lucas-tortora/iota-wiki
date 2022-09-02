@@ -1,6 +1,6 @@
 // @ts-check
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const content = require('./content/docusaurus.config');
+const content = require('./iota/docusaurus.config');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
