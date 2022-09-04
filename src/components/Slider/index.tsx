@@ -26,7 +26,7 @@ export default function ImageSlider({ path }: ImageSliderProps) {
 
   // Resolve images relative to the static folder
   const allImages = importImages(
-    require.context('@site/static/', true, /\.(png|jpe?g|svg|mp4)$/),
+    require.context('@site/../common/static/', true, /\.(png|jpe?g|svg|mp4)$/),
   );
   const requestedImages = allImages.filter((word) => word.startsWith(path));
 

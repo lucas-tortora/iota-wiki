@@ -6,7 +6,7 @@ import {
   Streams,
   Stronghold,
   Wallet,
-} from '../../icons';
+} from '@site/src/icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };
@@ -179,7 +179,9 @@ const LibrariesSection: FC = () => (
             <Link to='/streams/specs'>Read the specification</Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/streams/explanations/channels_protocol/overview'>Control the ownership of data</Link>
+            <Link to='/streams/explanations/channels_protocol/overview'>
+              Control the ownership of data
+            </Link>
           </li>
         </ul>
         <Link

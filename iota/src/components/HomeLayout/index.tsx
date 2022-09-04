@@ -18,7 +18,7 @@ import {
   Tips,
   Tutorials,
   Wasp,
-} from '../../icons';
+} from '@site/common/src/icons';
 import LibrariesSection from './LibrariesSection';
 
 interface HomepageSectionProps {
@@ -200,7 +200,8 @@ export default function HomeLayout() {
             <div className='start-building__section'>
               <h2 className='start-building__header'>IOTA Smart Contracts</h2>
               <p className='start-building__description'>
-                The IOTA Smart Contracts Protocol brings scalable and flexible smart contracts into the IOTA ecosystem.
+                The IOTA Smart Contracts Protocol brings scalable and flexible
+                smart contracts into the IOTA ecosystem.
               </p>
               <div className='start-building__buttons'>
                 <Link
@@ -244,12 +245,12 @@ export default function HomeLayout() {
                   </li>
                   <li className='nodes__feature'>
                     <Link to='/hornet/getting_started'>
-                    Participate in the network
+                      Participate in the network
                     </Link>
                   </li>
                   <li className='nodes__feature'>
                     <Link to='/hornet/how_tos/managing_a_node'>
-                    Manage your node
+                      Manage your node
                     </Link>
                   </li>
                 </ul>
@@ -269,9 +270,7 @@ export default function HomeLayout() {
                 <h3 className='nodes__header'>Bee</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>
-                    <Link to='/bee/welcome'>
-                      A node implementation in Rust
-                    </Link>
+                    <Link to='/bee/welcome'>A node implementation in Rust</Link>
                   </li>
                   <li className='nodes__feature'>
                     <Link to='/bee/getting_started'>
@@ -279,9 +278,7 @@ export default function HomeLayout() {
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/bee/how_tos/docker'>
-                      Become a node operator
-                    </Link>
+                    <Link to='/bee/how_tos/docker'>Become a node operator</Link>
                   </li>
                 </ul>
                 <Link

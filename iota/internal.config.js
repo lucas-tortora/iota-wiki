@@ -1,5 +1,6 @@
 // @ts-check
 // eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path');
 
 module.exports = {
   title: 'IOTA Wiki',
@@ -391,18 +392,25 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'iota',
-        path: '..',
+        path: './docs',
         routeBasePath: '/',
-        sidebarPath: './sidebars.ts',
-        include: ['./common/docs/**/*.{md,mdx}', './iota/docs/**/*.{md,mdx}'],
+        sidebarPath: path.resolve(__dirname, 'sidebars.ts'),
 
         // General config
-        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
+        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/iota/docs',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
+      },
+    ],
+  ],
+  themes: [
+    [
+      '@docusaurus/theme-classic',
+      {
+        customCss: require.resolve('./src/css/custom.css'),
       },
     ],
   ],
