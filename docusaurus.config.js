@@ -264,6 +264,14 @@ module.exports = {
         pages: {
           path: 'src/pages/iota',
         },
+        gtag: {
+          trackingID: 'UA-117344049-17',
+          anonymizeIP: true,
+        },
+        googleAnalytics: {
+          trackingID: 'UA-117344049-17',
+          anonymizeIP: true,
+        },
       },
     ],
   ],
